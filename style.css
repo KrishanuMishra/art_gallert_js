@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    height: 50px;
+    
+}
+li {
+    float: left;
+    height: 50px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color:goldenrod;
+    height: 50px;
+  }
+
+.main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+}
+
+.box{
+    width: 350px;
+    height: 350px;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.090);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.box img{
+    width: 300px;
+    height: 300px;
+    margin-top: 25px;
+}
+
+.box:nth-child(1),
+.box:nth-child(3){
+    transform:scale(0.9);
+}
+
+.box:hover{
+    height: 400px;
+}
+
+.box .details{
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    display:flex;
+    opacity: 0;
+    color: rgb(54, 54, 54);
+    font-size: 1.2rem;
+    z-index: 1;
+    transition: all .0s;
+}
+
+.box:hover .details{
+    opacity: 1;
+    transition: all 0.4s;
+
+}
+
+.details::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height:8px;
+    background: linear-gradient(to right,#0ed2f7,#b2effA);
+    bottom: 0cm;
+    z-index: -1;
+    opacity: .8;
+    transform: scaleX(0);
+    transition: all .4s;
+    transition-delay: .3s;
+    border-bottom: 10px;
+    transform-origin: left;
+}
+
+.box:hover .details::before{
+    transform: scaleX(1);
+}
